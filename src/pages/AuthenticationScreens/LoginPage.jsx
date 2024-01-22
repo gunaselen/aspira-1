@@ -86,8 +86,8 @@ console.log(products,"id")
 
     const form = useForm({
         defaultValues: {
-            password: "",
-            email:"",
+            email: "",
+            password:"",
         },
         mode: "all",
 
@@ -97,6 +97,7 @@ console.log(products,"id")
     const { errors } = formState;
     const onSubmit = data => {
         console.log("form in submite", data, errors.username?.message)
+        dispatch(fetchProdcts(data))
         navigate("/")
     }
 

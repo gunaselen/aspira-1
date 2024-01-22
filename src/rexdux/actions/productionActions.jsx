@@ -4,7 +4,7 @@ import apiURL from "../../apis/apiURL";
 
 export const fetchProdcts = ()=> 
     async  (dispatch) => {
-        const response =  await apiURL.get("/products");
+        const response =  await apiURL.get("/login");
         dispatch({type:ActionTypes.FETCH_PRODCTS , payload: response.data})
     }
     
