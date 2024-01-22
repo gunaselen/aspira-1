@@ -1,0 +1,25 @@
+.pagnation{
+    display: flex;
+    gap: 8px;
+    justify-content: end;
+    margin: 10px 0;
+    li{
+        border-radius: 8px;
+
+
+background: #FFF;
+padding: 10px;
+color: #333;
+font-size: 13px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+&.selected{
+    background: var(--Primary, #3282C4);
+    border: 1px solid #F1F1F1;
+    color: #FFF;
+
+
+}
+    }
+}

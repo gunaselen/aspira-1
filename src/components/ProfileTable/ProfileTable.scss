@@ -1,0 +1,48 @@
+.tabel-header{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.table-responsive{
+    width: 100%;
+    overflow: auto;
+    table{
+        border: 1px solid rgba(37, 46, 74, 0.20);
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        thead{
+            border: 1px solid rgba(37, 46, 74, 0.20);
+background: var(--Input-Field---BG, #EBF3FA);
+th{
+    padding: 15px 10px;
+    color: rgba(37, 46, 74, 0.60);
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 16px;
+}
+}
+tbody{
+    border: 1px solid rgba(37, 46, 74, 0.20);
+    color: var(--Text-Primary, #252E4A);
+    tr{
+        td{
+            padding: 15px 10px;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 16px;
+            border-block: 1px solid rgba(37, 46, 74, 0.20);
+            
+        }
+    }
+
+
+}
+      
+
+
+    }
+}

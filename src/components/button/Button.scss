@@ -1,0 +1,19 @@
+button{
+    color: #FFF;
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+padding: 8px 20px;
+border-radius: 4px;
+background: var(--Primary, #3282C4);
+width: fit-content;
+border: 1px solid #3282C4;
+display: flex;
+justify-content: center;
+gap: 20px;
+align-items: center;
+&.full-width{
+    width: 100%;
+}
+}

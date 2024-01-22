@@ -1,0 +1,148 @@
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-xlarge: 1200px;
+$breakpoint-xXlarge: 1360px;
+
+@mixin respondLayoutMax($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin respondLayoutMin($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin respondLayout($minbreakpoint,$maxbreakpoint) {
+  @media only screen and (min-width: $minbreakpoint) and (max-width: $maxbreakpoint) {
+    @content;
+  }
+}
+
+
+
+.side-bar {
+    width: 240px;
+    background: #192030;
+    box-shadow: 2px 0px 6px 0px rgba(20, 20, 20, 0.10);
+    padding: 16px;
+    transition: 1s all;
+    white-space: nowrap;
+    &.profile{
+      width: 84px;
+        ul .navitem span{
+    display: none;
+        }
+        .logo{
+          display: none;
+        }
+        .menulogo{
+          display: block;
+        }
+    }
+    &:not(.active){
+      @include respondLayout($breakpoint-large,$breakpoint-xXlarge){
+        
+        width: 84px;
+        ul .navitem span{
+    display: none;
+        }
+        .logo{
+          display: none;
+        }
+        .menulogo{
+          display: block;
+        }
+      }
+    }
+    @include respondLayout ( $breakpoint-large,$breakpoint-xXlarge){
+      &.logo{
+        display: block;
+      }
+      &.menulogo{
+        display: none;
+      }
+    }
+        @include respondLayoutMax ($breakpoint-large - 1px){
+position: fixed;
+top: 86px;
+z-index: 222;
+&:not(.active){
+  transform: translateX(-250px);
+}
+transform: translateX(0);
+        }
+        @include respondLayoutMax ($breakpoint-small){
+          top: 60px;
+        }
+      
+    &-logo{
+        text-align: center;
+        @include respondLayoutMax ($breakpoint-large - 1px){
+          // display: none;
+                  }
+        img{
+            max-width: 100%;
+            &.menulogo{
+              display: none;
+            }
+           
+          
+           
+        }
+    }
+   ul{
+    &.menulist{
+        margin-block: 30px;
+        height: calc( 100vh - 222px);
+    overflow-y: auto;
+    overflow-x: clip;
+
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+    // &::-webkit-scrollbar-track {
+    //   background: #f1f1f1; 
+    // }
+     
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+      background: #f1f1f1; 
+    }
+    @include respondLayoutMax ($breakpoint-large - 1px){
+      margin-block: 5px;
+    }
+    @include respondLayoutMax ($breakpoint-small){
+      height: calc( 100vh - 116px);
+    }
+    }
+   
+    .navitem{
+        margin-bottom: 12px;
+        a {
+            display: flex;
+            padding: 14px;
+            border-radius: 6px;
+            gap: 20px;
+            color: var(--DIsable, #ADB4BF);
+align-items: center;
+font-size: 14px;
+font-weight: 500;
+line-height: 14px;
+svg path{
+    stroke:var(--DIsable, #ADB4BF) ;
+}
+        }
+        &.active{
+            a {
+                background: #3282C4;
+                color: #FFF;
+    svg path{
+        stroke:#FFF; 
+    }
+            }
+        }
+    } 
+   }
+}

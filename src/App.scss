@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Martel+Sans:wght@300&family=MuseoModerno:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&family=Poppins:wght@300;400;500;600;700;900&family=Roboto:ital,wght@0,500;1,400;1,500&display=swap');
+
+*,
+*::after,
+*::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+html{
+  font-size: 10px;
+}
+body{
+  font-size: 1.6rem;
+  line-height: 1.6;
+  font-family: 'Poppins', sans-serif;
+}
+ul{
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+  color: unset;
+}
+h1, h2, h3, h4, h5, h6{
+  text-transform: capitalize;
+}
+
+
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-xlarge: 1200px;
+$breakpoint-xXlarge: 1360px;
+
+@mixin respondLayoutMax($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin respondLayoutMin($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin respondLayout($minbreakpoint,$maxbreakpoint) {
+  @media only screen and (min-width: $minbreakpoint) and (max-width: $maxbreakpoint) {
+    @content;
+  }
+}
+
+
+// @include respondLayout($breakpoint-large,$breakpoint-xXlarge){
+//   .side-bar{
+//     width: 84px;
+//     ul .navitem span{
+// display: none;
+//     }
+//   }
+// }

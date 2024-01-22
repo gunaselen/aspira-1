@@ -1,0 +1,59 @@
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-xlarge: 1200px;
+$breakpoint-xXlarge: 1360px;
+
+@mixin respondLayoutMax($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin respondLayoutMin($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin respondLayout($minbreakpoint,$maxbreakpoint) {
+  @media only screen and (min-width: $minbreakpoint) and (max-width: $maxbreakpoint) {
+    @content;
+  }
+}
+
+
+
+.main-section{
+  transition: 1s all;
+    display: flex;
+    background: #F5F7FB;
+    .right-section{
+        width: calc( 100% - 240px);
+        position: relative;
+        &.profilepage{
+         
+            width: calc( 100% - 84px);
+      
+
+        }
+        @include respondLayout($breakpoint-large,$breakpoint-xXlarge){
+            width: calc( 100% - 84px);
+        }
+        @include respondLayoutMax ($breakpoint-large - 1px){
+            width: 100% !important ;
+                    }
+    }
+    .inner-section {
+        height: calc( 100vh - 138px);
+        overflow: auto;
+        padding: 20px;
+        background: #F5F7FB;
+        &.profile-list {
+         
+          @include respondLayoutMin($breakpoint-medium){
+            padding-left: 182px;
+          }
+      }
+        
+    }
+    
+}

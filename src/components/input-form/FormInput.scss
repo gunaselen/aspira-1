@@ -1,0 +1,58 @@
+.form-section {
+    position: relative;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    label {
+        color: #282828;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        &.disabled{
+            color: #DEDEDE;
+        }
+    }
+    :is(input,textarea) {
+        text-transform: capitalize;
+        color: #282828;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        border-radius: 6px;
+        padding: 13px 20px;
+        border: 1px solid var(--Default-input-stroke, #dedede);
+        background: var(--Input-default, rgba(222, 222, 222, 0.1));
+        &:disabled{
+            color: #DEDEDE;
+border: 1px solid var(--Default-input-stroke, #DEDEDE);
+background: var(--Input-default, rgba(222, 222, 222, 0.10));
+        }
+        &:focus {
+            border: 1px solid var(--Primary, #3282c4);
+            background: var(--Input-Field---BG, #ebf3fa);
+            outline: 0;
+        }
+        &.error{
+            border-radius: 4px;
+border: 1px solid var(--Error, #E84138);
+background: var(--Input-Field---Error---BG, #F9E6E5);
+            
+        }
+       
+    }
+    .errorMSG {
+        color: var(--Error, #e84138);
+        position: absolute;
+        bottom: 0;
+        font-size: 12px;
+    }
+    span.eye-icon {
+        position: absolute;
+        right: 8px;
+        bottom: 24px;
+    }
+}

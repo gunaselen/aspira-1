@@ -1,0 +1,89 @@
+$breakpoint-small: 576px;
+$breakpoint-medium: 768px;
+$breakpoint-large: 992px;
+$breakpoint-xlarge: 1200px;
+$breakpoint-xXlarge: 1360px;
+
+@mixin respondLayoutMax($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin respondLayoutMin($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+} 
+.login {
+    background-color: var(--Primary, #3282c4);
+    background-image: url("../../../asset/images/loginBG.png");
+    background-repeat: no-repeat;
+    background-position: bottom left;
+   
+    &-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        max-width: 1220px;
+        margin: auto;
+        padding: clamp( 30px , 4vw , 120px ) 20px;
+        gap: 20px;
+        min-height: 100vh;
+        @include respondLayoutMax($breakpoint-medium){
+            justify-content: center;
+        }
+
+        &-text{
+            @include respondLayoutMin($breakpoint-medium){
+                max-width: 32%;
+            }
+            
+            h1 {
+                max-width: 370px;
+                color: #fff;
+                font-size: clamp( 26px , 3vw , 42px);
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                letter-spacing: -0.5px;
+            }
+        } 
+        &-form {
+            margin-block: auto;
+            max-width: 100%;
+            form {
+                border-radius: 20px;
+                background: #fff;
+                padding: 30px;
+                width: 470px;
+                max-width: 100%;
+                .logo {
+                    text-align: center;
+                    img {
+                        max-width: 100%;
+                    }
+                }
+                h2 {
+                    color: #282828;
+                    text-align: center;
+                    margin-block: clamp( 20px , 3vw , 30px);
+                    font-size: clamp( 20px , 3vw , 24px);
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: normal;
+                    letter-spacing: -0.24px;
+                }
+                .forgrt {
+                    color: #282828;
+                    font-size: 16px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    text-align: right;
+                    margin: 16px 0 30px 0;
+                    display: block;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,18 @@
+.footer{
+    display: flex;
+    justify-content: center;
+    padding: 20px 60px 20px ;
+    position: relative;
+    p{
+        color: var(--DIsable, #ADB4BF);
+font-size: 10px;
+font-style: normal;
+font-weight: 400;
+line-height: 18px;
+    }
+    &-version{
+        position: absolute;
+        right: 20px;
+    }
+
+}
