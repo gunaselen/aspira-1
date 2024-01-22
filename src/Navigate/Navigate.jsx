@@ -18,7 +18,6 @@ import Skills from '../pages/MyProfile/Skills'
 import Languages from '../pages/MyProfile/Languages'
 import SocialAccount from '../pages/MyProfile/SocialAccount'
 import Document from '../pages/MyProfile/Document'
-import { Counter } from '../pages/count/Count'
 
 function Navigate() {
   return (
@@ -45,7 +44,7 @@ function Navigate() {
         
         <Route path='/profile/document' element={<Document/>}/>
         <Route path='/profile/general' element={<General/>}  component={General}/>
-        <Route path='/counter' element={<Counter/>}/>
+
 
 {/* 
         <Route path='/profile/:productID' element={<General/>}  component={General}/>

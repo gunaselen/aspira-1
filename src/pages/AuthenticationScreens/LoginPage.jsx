@@ -37,24 +37,24 @@ const dispatch = useDispatch()
 
 
 
-// const fetchProductsDetail = async () =>{
-//     const response = await axios 
-//     .get(`https://fakestoreapi.com/products/${3}`)
-//     .catch((err) =>{
-//         console.log(err ,"err")
-//     })
-//     dispatch( selectedProducts( response.data))
+const fetchProductsDetail = async () =>{
+    const response = await axios 
+    .get(`https://fakestoreapi.com/products/${3}`)
+    .catch((err) =>{
+        console.log(err ,"err")
+    })
+    dispatch( selectedProducts( response.data))
 
-// }
+}
 
 
 
 
 
 useEffect(()=>{
-   
+    dispatch(fetchProdcts())
 
-   
+    fetchProductsDetail()
 },[])
 
 console.log(product ,"dded")
@@ -86,9 +86,8 @@ console.log(products,"id")
 
     const form = useForm({
         defaultValues: {
-            email:"",
             password: "",
- 
+            email:"",
         },
         mode: "all",
 
@@ -98,7 +97,6 @@ console.log(products,"id")
     const { errors } = formState;
     const onSubmit = data => {
         console.log("form in submite", data, errors.username?.message)
-        dispatch(fetchProdcts(data))
         navigate("/")
     }
 
@@ -131,7 +129,7 @@ console.log(products,"id")
                         validate: {
 
                             minLength: (v) =>
-                            v.length >= 4 || "The password should have at most 7 characters",
+                            v.length >= 7 || "The password should have at most 7 characters",
                             maxLength: (v) =>
                             v.length <= 12 || "The password should have at most 12 characters",
                         },

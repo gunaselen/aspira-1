@@ -3,20 +3,16 @@ import { ActionTypes } from "../contants/action-types";
 
 const initialState={
     products:[],
-    counterValue:0
 };
 
 
 export const    productReducer = (state = initialState, {type, payload}) =>{
     switch (type) {
-            case ActionTypes.INCREMENT:
-                console.log("INCpayload :",payload)
-                return {...state, counterValue:1};
-              
-                case ActionTypes.DECREMENT:
-                console.log("DECpayload :",payload)
+        case ActionTypes.SET_PRODUCTS:
+            return {...state, products:payload};
 
-                return {...state, counterValue:1};
+            case ActionTypes.FETCH_PRODCTS:
+                return {...state, products:payload};
         
         default:
             return state;
@@ -25,15 +21,15 @@ export const    productReducer = (state = initialState, {type, payload}) =>{
 };
 
 
-// export const    selectproductReducer = (state = initialState, {type, payload}) =>{
-//     switch (type) {
-//         case ActionTypes.SET_PRODUCTS:
-//             return {...state, ...payload};
+export const    selectproductReducer = (state = initialState, {type, payload}) =>{
+    switch (type) {
+        case ActionTypes.SET_PRODUCTS:
+            return {...state, ...payload};
         
-//         default:
-//             return state;
-//     }   
+        default:
+            return state;
+    }   
 
-// }
+}
 
 
